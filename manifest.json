@@ -1,0 +1,40 @@
+{
+  "manifest_version": 2,
+  "name": "Steam Breakout",
+  "version": "1.0",
+
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+
+  "page_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/ball16.png",
+      "32": "images/ball32.png",
+      "48": "images/ball48.png",
+      "128": "images/ball128.png"
+    },
+    "icons": {
+      "16": "images/ball16.png",
+      "32": "images/ball32.png",
+      "48": "images/ball48.png",
+      "128": "images/ball128.png"
+    }
+  },
+
+  "content_scripts": [{
+    "matches": ["http://*.steampowered.com/"],
+    "js": ["jquery.js"]
+  }],
+
+  "permissions": [
+    "activeTab",
+    "declarativeContent",
+    "storage",
+    "http://*.steampowered.com/"
+  ],
+
+  "web_accessible_resources": []
+}
